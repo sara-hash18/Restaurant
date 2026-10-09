@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BELLA SARWILA | Restaurant & Brunch</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#fff9f7;
+    color:#4d3038;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:82px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 7%;
+
+    z-index:1000;
+
+    background:rgba(255,249,247,.88);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid #f0d9df;
+
+    transition:.4s;
+}
+
+.navbar.scrolled{
+    box-shadow:0 5px 25px rgba(164,94,113,.10);
+}
+
+.logo{
+    font-family:Georgia,serif;
+    font-size:26px;
+    color:#b85f78;
+    letter-spacing:3px;
+}
+
+.logo span{
+    display:block;
+    font-family:Arial,sans-serif;
+    font-size:8px;
+    letter-spacing:4px;
+    text-align:center;
+    color:#8c6870;
+    margin-top:3px;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:32px;
+}
+
+.nav-links a{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:#63454c;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#c66c87;
+}
+
+.nav-btn{
+    background:#c66c87;
+    color:white;
+    padding:13px 22px;
+    font-size:10px;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+.nav-btn:hover{
+    background:#a84e6b;
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,246,244,.96) 0%,
+            rgba(255,246,244,.75) 42%,
+            rgba(255,246,244,.08) 100%
+        ),
+        url("restaurant-filles.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    width:55%;
+    padding:130px 0 80px 8%;
+}
+
+.hero-small{
+    color:#b85f78;
+    text-transform:uppercase;
+    letter-spacing:5px;
+    font-size:10px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:clamp(65px,9vw,125px);
+    line-height:.9;
+    font-weight:normal;
+    color:#9e526a;
+    letter-spacing:3px;
+}
+
+.hero h1 span{
+    color:#d78da0;
+    font-style:italic;
+}
+
+.hero-line{
+    width:90px;
+    height:2px;
+    background:#d5a0ad;
+    margin:30px 0;
+}
+
+.hero p{
+    max-width:520px;
+    font-family:Georgia,serif;
+    font-style:italic;
+    font-size:20px;
+    line-height:1.7;
+    color:#76545d;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.btn-pink{
+    background:#c66c87;
+    color:white;
+    padding:16px 28px;
+    font-size:10px;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+.btn-pink:hover{
+    background:#a84e6b;
+    transform:translateY(-3px);
+}
+
+.btn-light{
+    border:1px solid #c66c87;
+    color:#a8546d;
+    padding:16px 28px;
+    font-size:10px;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+.btn-light:hover{
+    background:#c66c87;
+    color:white;
+}
+
+
+/* =========================
+   DECORATION
+========================= */
+
+.flower{
+    position:absolute;
+    color:#d99aaa;
+    opacity:.35;
+    font-size:35px;
+}
+
+.flower1{
+    top:150px;
+    right:12%;
+}
+
+.flower2{
+    bottom:100px;
+    right:5%;
+    font-size:50px;
+}
+
+.flower3{
+    top:30%;
+    left:3%;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.section{
+    padding:110px 8%;
+}
+
+.intro{
+    text-align:center;
+    background:#fff;
+}
+
+.eyebrow{
+    color:#c66c87;
+    text-transform:uppercase;
+    letter-spacing:5px;
+    font-size:10px;
+    margin-bottom:18px;
+}
+
+.section-title{
+    font-family:Georgia,serif;
+    font-size:52px;
+    font-weight:normal;
+    color:#713f4b;
+}
+
+.section-text{
+    max-width:650px;
+    margin:25px auto 0;
+    color:#876a72;
+    line-height:1.9;
+    font-size:15px;
+}
+
+
+/* =========================
+   SPECIALS
+========================= */
+
+.specials{
+    background:#fff3f5;
+}
+
+.center{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.food-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.food-card{
+    background:white;
+    border-radius:4px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(151,82,103,.10);
+    transition:.4s;
+}
+
+.food-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(151,82,103,.18);
+}
+
+.food-image{
+    height:290px;
+    background-size:cover;
+    background-position:center;
+}
+
+.food1{
+    background-image:url("brunch.jpeg");
+}
+
+.food2{
+    background-image:url("pasta-rose.jpeg");
+}
+
+.food3{
+    background-image:url("dessert-rose.jpeg");
+}
+
+.food-content{
+    padding:25px;
+    text-align:center;
+}
+
+.food-content h3{
+    font-family:Georgia,serif;
+    font-size:24px;
+    font-weight:normal;
+    color:#713f4b;
+}
+
+.food-content p{
+    color:#92757d;
+    font-size:13px;
+    line-height:1.7;
+    margin:10px 0;
+}
+
+.price{
+    color:#c66c87;
+    font-weight:bold;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu{
+    background:#fff;
+}
+
+.menu-wrapper{
+    max-width:900px;
+    margin:auto;
+}
+
+.category{
+    margin-bottom:55px;
+}
+
+.category-title{
+    font-family:Georgia,serif;
+    font-size:30px;
+    font-weight:normal;
+    color:#b25770;
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+    margin-bottom:20px;
+}
+
+.category-title::after{
+    content:"";
+    height:1px;
+    background:#ead0d7;
+    flex:1;
+}
+
+.menu-item{
+    display:flex;
+    justify-content:space-between;
+    padding:21px 0;
+    border-bottom:1px dashed #ecd9dd;
+}
+
+.menu-info h3{
+    font-family:Georgia,serif;
+    font-weight:normal;
+    font-size:18px;
+    color:#623e47;
+}
+
+.menu-info p{
+    color:#967a81;
+    font-size:13px;
+    margin-top:6px;
+}
+
+.menu-price{
+    color:#c66c87;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+
+/* =========================
+   PINK QUOTE
+========================= */
+
+.quote{
+    background:#d990a4;
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+    position:relative;
+}
+
+.quote::before{
+    content:"❀";
+    position:absolute;
+    left:8%;
+    top:30px;
+    font-size:70px;
+    opacity:.2;
+}
+
+.quote::after{
+    content:"✿";
+    position:absolute;
+    right:8%;
+    bottom:25px;
+    font-size:70px;
+    opacity:.2;
+}
+
+.quote h2{
+    font-family:Georgia,serif;
+    font-size:46px;
+    font-weight:normal;
+    font-style:italic;
+    max-width:800px;
+    margin:auto;
+    line-height:1.4;
+}
+
+.quote p{
+    margin-top:25px;
+    letter-spacing:4px;
+    font-size:10px;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+    background:#fff7f8;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    grid-template-rows:250px 250px;
+    gap:10px;
+}
+
+.gallery-item{
+    background-size:cover;
+    background-position:center;
+    transition:.5s;
+}
+
+.gallery-item:hover{
+    transform:scale(1.02);
+}
+
+.g1{
+    grid-row:1 / 3;
+    background-image:url("restaurant-filles.jpeg");
+}
+
+.g2{
+    background-image:url("table-rose.jpeg");
+}
+
+.g3{
+    background-image:url("dessert-rose.jpeg");
+}
+
+.g4{
+    background-image:url("brunch.jpeg");
+}
+
+.g5{
+    background-image:url("restaurant-interieur-rose.jpeg");
+}
+
+
+/* =========================
+   RESERVATION
+========================= */
+
+.reservation{
+    background:#fff;
+    text-align:center;
+}
+
+.reservation-box{
+    max-width:800px;
+    margin:auto;
+}
+
+.reservation-text{
+    color:#8d7077;
+    line-height:1.8;
+    margin:20px auto 40px;
+}
+
+.form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.form input,
+.form select{
+    padding:17px;
+
+    border:1px solid #e6cbd2;
+
+    background:#fffafb;
+
+    color:#62434c;
+
+    outline:none;
+}
+
+.form input:focus,
+.form select:focus{
+    border-color:#c66c87;
+}
+
+.form button{
+    grid-column:1/-1;
+
+    padding:18px;
+
+    border:none;
+
+    background:#c66c87;
+
+    color:white;
+
+    letter-spacing:2px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.form button:hover{
+    background:#a84e6b;
+}
+
+#message{
+    display:none;
+    color:#b85f78;
+    margin-top:20px;
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.info{
+    background:#f9e9ed;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    text-align:center;
+}
+
+.info-box{
+    padding:30px;
+    border-right:1px solid #e9ccd4;
+}
+
+.info-box:last-child{
+    border-right:none;
+}
+
+.info-icon{
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.info-box h3{
+    font-family:Georgia,serif;
+    color:#713f4b;
+    font-weight:normal;
+    margin-bottom:10px;
+}
+
+.info-box p{
+    color:#896d74;
+    line-height:1.8;
+    font-size:13px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#713f4b;
+    color:white;
+    text-align:center;
+    padding:60px 20px 30px;
+}
+
+.footer-logo{
+    font-family:Georgia,serif;
+    font-size:30px;
+    letter-spacing:5px;
+}
+
+.footer-sub{
+    color:#edcbd3;
+    font-size:9px;
+    letter-spacing:4px;
+    margin-top:8px;
+}
+
+.social{
+    margin:30px 0;
+}
+
+.social a{
+    margin:0 12px;
+    font-size:10px;
+    letter-spacing:2px;
+    color:#f7dce2;
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,.15);
+    padding-top:22px;
+    color:#d9b5bf;
+    font-size:11px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        background:
+        linear-gradient(
+            rgba(255,246,244,.82),
+            rgba(255,246,244,.82)
+        ),
+        url("restaurant-filles.jpeg");
+
+        background-size:cover;
+        background-position:center;
+    }
+
+    .hero-content{
+        width:100%;
+        padding:140px 8% 80px;
+        text-align:center;
+    }
+
+    .hero-line{
+        margin:25px auto;
+    }
+
+    .hero p{
+        margin:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .food-grid{
+        grid-template-columns:1fr;
+    }
+
+    .info{
+        grid-template-columns:1fr;
+    }
+
+    .info-box{
+        border-right:none;
+        border-bottom:1px solid #e9ccd4;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        padding:0 5%;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .nav-btn{
+        padding:10px 13px;
+        font-size:8px;
+    }
+
+    .hero h1{
+        font-size:65px;
+    }
+
+    .section{
+        padding:80px 6%;
+    }
+
+    .section-title{
+        font-size:39px;
+    }
+
+    .quote h2{
+        font-size:32px;
+    }
+
+    .gallery-grid{
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:auto;
+    }
+
+    .gallery-item{
+        height:300px;
+    }
+
+    .g1{
+        grid-row:auto;
+    }
+
+    .form{
+        grid-template-columns:1fr;
+    }
+
+    .form button{
+        grid-column:auto;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <a href="#accueil" class="logo">
+        BELLA SARWILA
+        <span>RESTAURANT & BRUNCH</span>
+    </a>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#accueil">Accueil</a>
+        </li>
+
+        <li>
+            <a href="#apropos">Notre histoire</a>
+        </li>
+
+        <li>
+            <a href="#menu">Menu</a>
+        </li>
+
+        <li>
+            <a href="#galerie">Galerie</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+    <a href="#reservation" class="nav-btn">
+        RÉSERVER
+    </a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="accueil">
+
+    <div class="flower flower1">✿</div>
+    <div class="flower flower2">❀</div>
+    <div class="flower flower3">♡</div>
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            Brunch • Cuisine • Moments
+        </div>
+
+        <h1>
+            Bella <span>Rosé</span>
+        </h1>
+
+        <div class="hero-line"></div>
+
+        <p>
+            Un petit coin de paradis rose où l'on vient
+            pour bien manger, papoter et créer de beaux souvenirs.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#menu" class="btn-pink">
+                DÉCOUVRIR LE MENU
+            </a>
+
+            <a href="#reservation" class="btn-light">
+                RÉSERVER UNE TABLE
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="section intro" id="apropos">
+
+    <div class="eyebrow">
+        Bienvenue chez nous
+    </div>
+
+    <h2 class="section-title">
+        Girls, brunch & good vibes ♡
+    </h2>
+
+    <p class="section-text">
+        Bella Rosé est un restaurant pensé pour les beaux moments :
+        un brunch entre copines, un anniversaire, un date,
+        ou simplement une pause gourmande dans un décor
+        doux, fleuri et élégant.
+    </p>
+
+</section>
+
+
+<!-- SPECIALS -->
+
+<section class="section specials">
+
+    <div class="center">
+
+        <div class="eyebrow">
+            Nos coups de cœur
+        </div>
+
+        <h2 class="section-title">
+            Les favorites
+        </h2>
+
+    </div>
+
+
+    <div class="food-grid">
+
+
+        <div class="food-card">
+
+            <div class="food-image food1"></div>
+
+            <div class="food-content">
+
+                <h3>
+                    Bella Brunch
+                </h3>
+
+                <p>
+                    Pancakes, fruits frais, œufs,
+                    avocat et boisson chaude.
+                </p>
+
+                <div class="price">
+                    95 DH
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="food-card">
+
+            <div class="food-image food2"></div>
+
+            <div class="food-content">
+
+                <h3>
+                    Pasta Rosé
+                </h3>
+
+                <p>
+                    Pâtes crémeuses, parmesan,
+                    tomates cerises et basilic.
+                </p>
+
+                <div class="price">
+                    85 DH
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="food-card">
+
+            <div class="food-image food3"></div>
+
+            <div class="food-content">
+
+                <h3>
+                    Pink Dessert
+                </h3>
+
+                <p>
+                    Douceur maison aux fruits rouges
+                    et crème légère.
+                </p>
+
+                <div class="price">
+                    45 DH
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MENU -->
+
+<section class="section menu" id="menu">
+
+    <div class="center">
+
+        <div class="eyebrow">
+            À déguster
+        </div>
+
+        <h2 class="section-title">
+            Notre Menu
+        </h2>
+
+    </div>
+
+
+    <div class="menu-wrapper">
+
+
+        <div class="category">
+
+            <h3 class="category-title">
+                ✿ Brunch
+            </h3>
+
+
+            <div class="menu-item">
+
+                <div class="menu-info">
+
+                    <h3>
+                        Bella Pancakes
+                    </h3>
+
+                    <p>
+                        Pancakes, fruits rouges,
+                        sirop d'érable.
+                    </p>
+
+                </div>
+
+                <div class="menu-price">
+                    65 DH
+                </div>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="menu-info">
+
+                    <h3>
+                        Avocado Toast
+                    </h3>
+
+                    <p>
+                        Avocat, œuf poché,
+                        graines et salade.
+                    </p>
+
+                </div>
+
+                <div class="menu-price">
+                    60 DH
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="category">
+
+            <h3 class="category-title">
+                ♡ Plats
+            </h3>
+
+
+            <div class="menu-item">
+
+                <div class="menu-info">
+
+                    <h3>
+                        Pasta Rosé
+                    </h3>
+
+                    <p>
+                        Sauce crémeuse, parmesan
+                        et tomates cerises.
+                    </p>
+
+                </div>
+
+                <div class="menu-price">
+                    85 DH
+                </div>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="menu-info">
+
+                    <h3>
+                        Chicken Bowl
+                    </h3>
+
+                    <p>
+                        Poulet grillé, avocat,
+                        riz et légumes frais.
+                    </p>
+
+                </div>
+
+                <div class="menu-price">
+                    90 DH
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="category">
+
+            <h3 class="category-title">
+                ❀ Desserts
+            </h3>
+
+
+            <div class="menu-item">
+
+                <div class="menu-info">
+
+                    <h3>
+                        Strawberry Cake
+                    </h3>
+
+                    <p>
+                        Gâteau moelleux,
+                        fraises fraîches et crème.
+                    </p>
+
+                </div>
+
+                <div class="menu-price">
+                    45 DH
+                </div>
+
+            </div>
+
+
+            <div class="menu-item">
+
+                <div class="menu-info">
+
+                    <h3>
+                        Pink Cheesecake
+                    </h3>
+
+                    <p>
+                        Cheesecake aux fruits rouges.
+                    </p>
+
+                </div>
+
+                <div class="menu-price">
+                    50 DH
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QUOTE -->
+
+<section class="quote">
+
+    <h2>
+        "Good food, pretty places
+        & beautiful memories."
+    </h2>
+
+    <p>
+        BELLA SARWILA ♡
+    </p>
+
+</section>
+
+
+<!-- GALERIE -->
+
+<section class="section gallery" id="galerie">
+
+    <div class="center">
+
+        <div class="eyebrow">
+            Our pretty place
+        </div>
+
+        <h2 class="section-title">
+            Bella Moments
+        </h2>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item g1"></div>
+
+        <div class="gallery-item g2"></div>
+
+        <div class="gallery-item g3"></div>
+
+        <div class="gallery-item g4"></div>
+
+        <div class="gallery-item g5"></div>
+
+    </div>
+
+</section>
+
+
+<!-- RESERVATION -->
+
+<section class="section reservation" id="reservation">
+
+    <div class="reservation-box">
+
+        <div class="eyebrow">
+            Your table is waiting ♡
+        </div>
+
+        <h2 class="section-title">
+            Réserver une table
+        </h2>
+
+        <p class="reservation-text">
+            Réserve ton petit moment chez Bella Rosé
+            pour bruncher, déjeuner et profiter.
+        </p>
+
+
+        <form class="form" id="reservationForm">
+
+            <input
+                type="text"
+                placeholder="Ton prénom"
+                required
+            >
+
+            <input
+                type="tel"
+                placeholder="Ton téléphone"
+                required
+            >
+
+            <input
+                type="date"
+                required
+            >
+
+            <select required>
+
+                <option value="">
+                    Choisir l'heure
+                </option>
+
+                <option>11:00</option>
+                <option>11:30</option>
+                <option>12:00</option>
+                <option>12:30</option>
+                <option>13:00</option>
+                <option>13:30</option>
+                <option>14:00</option>
+
+            </select>
+
+            <select required>
+
+                <option value="">
+                    Nombre de personnes
+                </option>
+
+                <option>1 personne</option>
+                <option>2 personnes</option>
+                <option>3 personnes</option>
+                <option>4 personnes</option>
+                <option>5 personnes</option>
+                <option>6 personnes</option>
+
+            </select>
+
+            <button type="submit">
+                CONFIRMER MA RÉSERVATION ♡
+            </button>
+
+        </form>
+
+        <div id="message">
+            ✓ Merci ! Ta demande de réservation est envoyée ♡
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INFOS -->
+
+<section class="section info" id="contact">
+
+    <div class="info-box">
+
+        <div class="info-icon">
+            📍
+        </div>
+
+        <h3>
+            Où nous trouver ?
+        </h3>
+
+        <p>
+            Avenue Mohammed V<br>
+            EL JADIDA, Maroc
+        </p>
+
+    </div>
+
+
+    <div class="info-box">
+
+        <div class="info-icon">
+            🕐
+        </div>
+
+        <h3>
+            Horaires
+        </h3>
+
+        <p>
+            Tous les jours<br>
+            10:00 — 22:00
+        </p>
+
+    </div>
+
+
+    <div class="info-box">
+
+        <div class="info-icon">
+            💌
+        </div>
+
+        <h3>
+            Contact
+        </h3>
+
+        <p>
+            +212 724247658<br>
+            hello@bellarose.ma
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        BELLA SARWILA
+    </div>
+
+    <div class="footer-sub">
+        RESTAURANT & BRUNCH
+    </div>
+
+    <div class="social">
+
+        <a href="#">
+            INSTAGRAM
+        </a>
+
+        <a href="#">
+            FACEBOOK
+        </a>
+
+        <a href="#">
+            TIKTOK
+        </a>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Bella SARWILA — Tous droits réservés.
+    </div>
+
+</footer>
+
+
+<script>
+
+/* NAVBAR */
+
+window.addEventListener("scroll",function(){
+
+    const navbar=document.querySelector(".navbar");
+
+    if(window.scrollY>50){
+        navbar.classList.add("scrolled");
+    }else{
+        navbar.classList.remove("scrolled");
+    }
+
+});
+
+
+/* RESERVATION */
+
+const form=document.getElementById("reservationForm");
+const message=document.getElementById("message");
+
+form.addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    message.style.display="block";
+
+    form.reset();
+
+});
+
+</script>
+
+
+</body>
+</html>
